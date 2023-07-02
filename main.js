@@ -1,6 +1,6 @@
 let box= document.getElementById("posters")
 
-
+// function loads the list and also the movie informations
 function display(data){
 var p = document.createElement("p")
 p.innerText="Menu"
@@ -27,7 +27,7 @@ p.addEventListener("click", ()=>{
         document.body.appendChild(list)
    
     li.addEventListener("click", ()=>{
-       
+    // loads image and its data   
        let image = document.createElement("img")
        if(check === 1){
         box.style.display= "none"
@@ -59,6 +59,7 @@ p.addEventListener("click", ()=>{
 }
 
 
+// function to display the movie details on buying tickets
 
 function buy(detail,i){
         let buyButton = document.createElement("button")
@@ -92,7 +93,7 @@ function buy(detail,i){
     }
 
 
-   
+   // fetches data from JSON
 fetch("http://localhost:3000/films")
   .then(response => response.json())
   .then(data => {
